@@ -1,0 +1,15 @@
+<p-card [header]="data.name" [subheader]="data.level">
+  <div class="card-flex flex flex-column">
+    <p>{{ data.description }}</p>
+    <div class="flex-fill flex flex-column justify-end mt-3">
+      <div class="flex justify-between">
+        <label class="text-primary">Experience:</label>
+        <span>{{ data.yearsOfExperience }} years</span>
+      </div>
+      <div class="flex justify-between">
+        <label class="text-primary">Last Used: </label>
+        <span>{{ data.lastUsedDate | date: "MMM yyyy" }}</span>
+      </div>
+    </div>
+  </div>
+</p-card>

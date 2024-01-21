@@ -1,0 +1,16 @@
+<div class="flex flex-nowrap">
+  <div class="chart-container">
+    <canvas #chartCanvas [id]="chartId"></canvas>
+  </div>
+  <div class="chart-legend px-4">
+    <div class="chart-legend-item" *ngFor="let item of chartData">
+      <div
+        class="chart-legend-item-color"
+        [style.background]="item.color"
+      ></div>
+      <div class="chart-legend-item-label text-primary">
+        {{ item.key }}
+      </div>
+    </div>
+  </div>
+</div>

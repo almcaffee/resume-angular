@@ -1,0 +1,17 @@
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-section-header',
+  standalone: true,
+  imports: [],
+  templateUrl: './section-header.component.html',
+  styleUrl: './section-header.component.scss',
+})
+export class SectionHeaderComponent {
+  @Input() title: string | undefined;
+
+  constructor(private readonly ar: ActivatedRoute) {
+    console.log(ar.snapshot);
+  }
+}

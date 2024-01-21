@@ -1,0 +1,58 @@
+<div
+  *ngIf="position$ | async as position"
+  class="surface-section px-4 py-5 md:px-6 lg:px-8"
+>
+  <ul class="list-none p-0 m-0 flex align-items-center font-medium mb-3">
+    <li>
+      <a
+        class="text-500 no-underline line-height-3 cursor-pointer"
+        [routerLink]="['/experience']"
+        >Experience</a
+      >
+    </li>
+    <ng-container>
+      <li class="px-2">
+        <i class="pi pi-angle-right text-500 line-height-3"></i>
+      </li>
+      <li>
+        <a class="text-500 no-underline line-height-3 cursor-pointer">{{
+          position.companyName
+        }}</a>
+      </li>
+    </ng-container>
+  </ul>
+  <div
+    class="flex align-items-start flex-column lg:justify-content-between lg:flex-row"
+  >
+    <div>
+      <div class="font-medium text-3xl text-900">
+        {{ position?.title ?? "" }}
+      </div>
+      <div class="flex align-items-center text-700 flex-wrap">
+        <div class="flex align-items-center mt-3 mr-5">
+          <span><p-tag [value]="position.stack"></p-tag></span>
+        </div>
+        <div *ngIf="position" class="mr-5 flex align-items-center mt-3">
+          <span class="text-2xl">{{ "{ " }}</span
+          ><i class="pi pi-calendar mr-2 ml-2"></i>
+          <span class="mr-2"
+            >{{ position.start | date: "MMM yyyy" }} -
+            {{ position.ended | date: "MMM yyyy" }}</span
+          ><span class="text-2xl">{{ " }" }}</span>
+        </div>
+        <div class="flex align-items-center mt-3">
+          <i class="pi pi-list mr-2"></i>
+          <span
+            ><p-dropdown
+              [options]="companies"
+              optionLabel="companyName"
+              [showClear]="true"
+              placeholder="Select a position"
+              styleClass="no-input"
+            ></p-dropdown>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
