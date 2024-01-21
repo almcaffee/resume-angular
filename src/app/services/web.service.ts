@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, from, take } from 'rxjs';
+import { Observable, combineLatest, from, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WebService {
   protected baseUrl = 'http://localhost:3000/api';
+  protected rawContentUrl =
+    'https://raw.githubusercontent.com/almcaffee/resume-angular/master/src/app';
   constructor(protected readonly httpClient: HttpClient) {
     this.onInit(); // Not to be confused with ngOnInit
   }
@@ -97,6 +99,18 @@ export class WebService {
    */
   makeRequest<T = unknown>(request: Observable<T>): Observable<T> {
     return request.pipe(take(1));
+  }
+
+  makeMultipleRawContentRequests(
+    paths: Array<string>,
+  ): Observable<Array<string>> {
+    return combineLatest(paths.map((path) => this.makeRawContentRequest(path)));
+  }
+
+  makeRawContentRequest(path: string): Observable<string> {
+    return this.makeGetRequest<string>(`${this.rawContentUrl}/${path}`, {
+      responseType: 'text',
+    });
   }
 
   /**

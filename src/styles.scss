@@ -44,7 +44,7 @@ footer {
 main {
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding-top: 64px;
   .content {
@@ -59,20 +59,20 @@ main {
   }
 }
 
+app-header,
 app-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #ccc;
-}
-
-app-header,
-app-footer {
   width: 100vw;
 }
 
+app-footer {
+  border-top: 1px solid #ccc;
+}
+
 @media screen and (max-width: 1479px) {
-  app-header > .nav-container,
+  header,
   main > .content,
   footer {
     width: calc(100vw - 4vw);
@@ -80,7 +80,7 @@ app-footer {
 }
 
 @media screen and (min-width: 1480px) {
-  app-header > .nav-container,
+  header,
   main > .content,
   footer {
     width: var(--max-width);

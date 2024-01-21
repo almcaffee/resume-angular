@@ -9,6 +9,7 @@ import {
   catchError,
   combineLatest,
   switchMap,
+  take,
   takeUntil,
   tap,
   timer,
@@ -20,11 +21,25 @@ import { selectPositions } from '../../store/store.selectors';
 import { MessageService } from 'primeng/api';
 import { HttpErrorResponse } from '@angular/common/http';
 import { getToastMessage } from '../../utils';
+import { TerminalModule } from 'primeng/terminal';
+import { CommonModule } from '@angular/common';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { TabViewModule } from 'primeng/tabview';
+import path from 'path';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule, ChipModule, ExperienceHeaderComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    ButtonModule,
+    ChipModule,
+    ExperienceHeaderComponent,
+    TerminalModule,
+    ScrollPanelModule,
+    TabViewModule,
+  ],
   providers: [MessageService],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
@@ -38,11 +53,16 @@ export class ExperienceComponent {
   companies$ = this.expService
     .getExperienceList('companyName')
     .pipe(takeUntil(this.destroy$));
+  rawContent$ = this.expService.makeMultipleRawContentRequests([
+    'components/experience/experience.component.ts',
+    'components/experience/experience-header/experience-header.component.ts',
+    'components/experience/experience-detail/experience-detail.component.ts',
+  ]);
+
   constructor(
     private readonly expService: ExperienceService,
     private readonly route: ActivatedRoute,
     private readonly store: Store,
-    private readonly messageService: MessageService,
   ) {
     this.route.firstChild?.params
       .pipe(
@@ -57,6 +77,9 @@ export class ExperienceComponent {
 
   ngOnInit() {
     this.initExperienceData();
+    // this.expService
+    //   .getRawContent('components/experience/experience.component.ts')
+    //   .subscribe((res) => console.log(res));
   }
 
   initExperienceData() {

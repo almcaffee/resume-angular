@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ExpDetailComponent } from './exp-detail/exp-detail.component';
+import { ExpDetailComponent } from './experience-detail/experience-detail.component';
 
 export const expChildRoutes: Routes = [
   {

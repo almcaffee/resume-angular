@@ -1,0 +1,14 @@
+<div *ngIf="position$ | async as position" class="surface-section mt-5">
+  <div class="font-medium text-2xl text-900 mb-3">What my resume says</div>
+  <ul class="list-none p-0 m-0">
+    <li
+      *ngFor="let bullet of position.bullets"
+      class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-nowrap"
+    >
+      <i class="pi pi-circle-fill mr-5 text-primary"></i>
+      <div class="text-900 flex-order-1">
+        {{ bullet.description }}
+      </div>
+    </li>
+  </ul>
+</div>

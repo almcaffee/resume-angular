@@ -127,6 +127,7 @@ dist
 .pnp.*
 
 
-./angular*
-./history*
-./vscode*
+.angular*
+.history*
+.vscode*
+.angular/
