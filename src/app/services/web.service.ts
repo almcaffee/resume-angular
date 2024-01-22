@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, combineLatest, from, take } from 'rxjs';
+import { Observable, combineLatest, from, map, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -103,14 +103,16 @@ export class WebService {
 
   makeMultipleRawContentRequests(
     paths: Array<string>,
-  ): Observable<Array<string>> {
+  ): Observable<Array<{ filename: string; content: string }>> {
     return combineLatest(paths.map((path) => this.makeRawContentRequest(path)));
   }
 
-  makeRawContentRequest(path: string): Observable<string> {
+  makeRawContentRequest(
+    path: string,
+  ): Observable<{ filename: string; content: string }> {
     return this.makeGetRequest<string>(`${this.rawContentUrl}/${path}`, {
       responseType: 'text',
-    });
+    }).pipe(map((content) => ({ filename: path.split('/').pop()!, content })));
   }
 
   /**

@@ -1,10 +1,15 @@
 import { createAction, props } from '@ngrx/store';
-import { IndexList, Position } from '../models';
+import { Experience, IndexList, Position } from '../models';
 import { Message } from 'primeng/api';
 
 export const addPositions = createAction(
   '[Experience Component] Set Positions',
   props<{ positions: Array<Position> }>(),
+);
+
+export const addLanguages = createAction(
+  '[Experience Component] Set Languages',
+  props<{ languages: Array<Experience> }>(),
 );
 
 export const addCompanies = createAction(

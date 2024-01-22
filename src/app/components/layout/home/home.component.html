@@ -1,11 +1,9 @@
-<div class="grid grid-nogutter surface-section text-800">
-  <div
-    class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center"
-  >
+<div class="grid grid-nogutter surface-section text-800 mid-bg">
+  <div class="col-12 p-6 text-center md:text-left flex align-items-center">
     <section>
       <span class="block text-6xl font-bold mb-1">Ollie Tinsley</span>
       <div class="text-6xl text-primary font-bold mb-3">Software Engineer</div>
-      <p class="mt-0 mb-4 text-700 line-height-3">
+      <p class="col-12 md:col-8 lg:col-6 mt-0 mb-4 text-700 line-height-3">
         With over 15 years developing rich Web Applications with the last seven
         and a half years focusing on building Single Page Applications (SPA)...
         I've built this full-stack application to showcase my abilities.
@@ -21,20 +19,12 @@
       ></button>
     </section>
   </div>
-  <div class="col-12 md:col-6 overflow-hidden">
-    <img
-      src="assets/images/jpg/me-1-sm.jpg"
-      alt="Image"
-      class="md:ml-auto block md:h-full"
-      style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
-    />
-  </div>
 </div>
-<div class="col-12 flex flex-wrap align-between">
-  <ng-container *ngFor="let exp of languages$ | async">
-    <app-experience-card [data]="exp" [type]="'language'"></app-experience-card>
-  </ng-container>
+
+<div class="mt-5">
+  <app-home-carousel></app-home-carousel>
 </div>
+
 <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
   <div class="text-700 text-center">
     <div></div>
@@ -64,8 +54,6 @@
     organizations.
   </div>
   <div class="grid worked-with-container">
-    <!-- <div class="worked-with">
-    </div> -->
     <div class="worked-with">
       <img src="assets/images/svg/amazon.png" alt="Amazon" />
     </div>

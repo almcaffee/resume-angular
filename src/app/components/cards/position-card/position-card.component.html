@@ -1,0 +1,26 @@
+<a [routerLink]="['/experience', data.id]"
+  ><p-card [header]="data.title" [subheader]="data.companyName">
+    <div class="card-flex flex flex-column">
+      <div div class="flex flex-nowrap align-items-center justify-between mb-3">
+        <span class="flex flex-nowrap align-items-center">
+          <span class="text-primary text-3xl mr-2">{{ "{" }}</span
+          >{{ data.start | date: "MMM yyyy" }} -
+          {{ data.ended | date: "MMM yyyy" }}
+          <span class="text-primary text-3xl ml-2">{{ "}" }}</span>
+        </span>
+        <span><p-tag [value]="data.stack" icon="pi pi-eye"></p-tag></span>
+      </div>
+      <!-- <p *ngIf="showDetail && data.headline">{{ data.headline }}</p> -->
+      <div
+        class="flex-fill flex flex-column justify-end"
+        [class.mt-3]="showDetail"
+      >
+        <ng-container *ngFor="let bullet of data.bullets; let i = index">
+          <div *ngIf="i < 3" class="mb-2 position-card-bullet">
+            {{ bullet.description }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </p-card>
+</a>

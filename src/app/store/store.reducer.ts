@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import {
   addCompanies,
+  addLanguages,
   addPositions,
   addTitles,
   clearSelectedPosition,
@@ -36,6 +37,7 @@ const _rootReducer = createReducer(
   on(addPositions, (state, { positions }) => ({ ...state, positions })),
   on(addTitles, (state, { titles }) => ({ ...state, titles })),
   on(addCompanies, (state, { companies }) => ({ ...state, companies })),
+  on(addLanguages, (state, { languages }) => ({ ...state, languages })),
   on(setPosition, (state, { position }) => ({
     ...state,
     activePosition: position,

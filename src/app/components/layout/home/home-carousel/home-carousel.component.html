@@ -1,0 +1,31 @@
+<ng-container *ngIf="positions.length && type === 'position'">
+  <div class="surface-section">
+    <p-carousel
+      [value]="positions"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="false"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-position pTemplate="item">
+        <app-position-card [data]="position"></app-position-card>
+      </ng-template>
+    </p-carousel>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="languages.length && type === 'experience'">
+  <div class="surface-section">
+    <p-carousel
+      [value]="languages"
+      [numVisible]="4"
+      [numScroll]="1"
+      [circular]="false"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-language pTemplate="item">
+        <app-experience-card [data]="language"></app-experience-card>
+      </ng-template>
+    </p-carousel>
+  </div>
+</ng-container>

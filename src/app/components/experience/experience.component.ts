@@ -25,7 +25,7 @@ import { TerminalModule } from 'primeng/terminal';
 import { CommonModule } from '@angular/common';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { TabViewModule } from 'primeng/tabview';
-import path from 'path';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-experience',
@@ -39,6 +39,7 @@ import path from 'path';
     TerminalModule,
     ScrollPanelModule,
     TabViewModule,
+    HighlightModule,
   ],
   providers: [MessageService],
   templateUrl: './experience.component.html',
@@ -77,9 +78,6 @@ export class ExperienceComponent {
 
   ngOnInit() {
     this.initExperienceData();
-    // this.expService
-    //   .getRawContent('components/experience/experience.component.ts')
-    //   .subscribe((res) => console.log(res));
   }
 
   initExperienceData() {

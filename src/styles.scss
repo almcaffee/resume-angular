@@ -71,6 +71,18 @@ app-footer {
   border-top: 1px solid #ccc;
 }
 
+app-position-card,
+app-experience-card {
+  margin: 1rem;
+  &:hover {
+    margin-bottom: 0;
+    p-card {
+      aspect-ratio: 0.99;
+      margin-top: -0.75rem;
+    }
+  }
+}
+
 @media screen and (max-width: 1479px) {
   header,
   main > .content,
@@ -85,4 +97,12 @@ app-footer {
   footer {
     width: var(--max-width);
   }
+}
+
+.light-bg {
+  background: url("assets/images/png/light-bg.png") center center no-repeat;
+}
+
+.mid-bg {
+  background: url("assets/images/png/mid-sm-bg.png") center center no-repeat;
 }
