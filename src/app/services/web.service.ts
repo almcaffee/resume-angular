@@ -6,7 +6,7 @@ import { Observable, combineLatest, from, map, take } from 'rxjs';
   providedIn: 'root',
 })
 export class WebService {
-  protected baseUrl = 'http://localhost:3000/api';
+  protected baseUrl = 'http://localhost:3100/api';
   protected rawContentUrl =
     'https://raw.githubusercontent.com/almcaffee/resume-angular/master/src/app';
   constructor(protected readonly httpClient: HttpClient) {
