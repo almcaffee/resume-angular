@@ -44,8 +44,8 @@
             <span class="text-primary text-3xl">{{ "{ " }}</span
             ><i class="pi pi-calendar mr-2 ml-2"></i>
             <span class="mr-2"
-              >{{ position.start | date: "MMM yyyy" }} -
-              {{ position.ended | date: "MMM yyyy" }}</span
+              >{{ position.start | date: "MMM yyyy" : "America/New York" }} -
+              {{ position.ended | date: "MMM yyyy" : "America/New York" }}</span
             ><span class="text-primary text-3xl">{{ " }" }}</span>
           </div>
           <div class="flex align-items-center mt-3">
@@ -55,7 +55,7 @@
                 [options]="companies"
                 optionLabel="companyName"
                 [showClear]="true"
-                placeholder="Select a position"
+                placeholder="Select another position"
                 styleClass="no-input"
                 (onChange)="viewPosition($event.value.id)"
               ></p-dropdown>

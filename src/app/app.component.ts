@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/layout/header/header.component';
-import { MessageComponent } from './components/layout/message/message.component';
-import { FooterComponent } from './components/layout/footer/footer.component';
+import { FooterComponent } from '@component/layout/footer/footer.component';
+import { HeaderComponent } from '@component/layout/header/header.component';
+import { MessageComponent } from '@component/layout/message/message.component';
 
 @Component({
   selector: 'app-root',

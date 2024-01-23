@@ -19,10 +19,27 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"],
+    "paths": {
+      "@cards/*": ["./src/app/components/cards/*"],
+      "@charts": ["./src/app/charts/index/ts"],
+      "@component/*": ["./src/app/components/*"],
+      "@components/*": ["./src/app/components/index/ts"],
+      "@experience/*": ["./src/app/components/experience/*"],
+      "@framework/*": ["./src/app/components/framework/*"],
+      "@constant/*": ["./src/app/constants/*"],
+      "@constants": ["./src/app/constants/index/ts"],
+      "@model/*": ["./src/app/models/*"],
+      "@models": ["./src/app/models/index/ts"],
+      "@pipe/*": ["./src/app/pipes/*"],
+      "@pipes": ["./src/app/pipes/index/ts"],
+      "@service/*": ["./src/app/services/*"],
+      "@services": ["./src/app/services/index/ts"],
+      "@store/*": ["./src/app/stores/*"],
+      "@stores": ["./src/app/stores/index/ts"],
+      "@util/*": ["./src/app/utils/*"],
+      "@utils": ["./src/app/utils/index/ts"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

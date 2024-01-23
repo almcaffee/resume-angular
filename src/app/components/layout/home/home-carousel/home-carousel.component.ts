@@ -23,7 +23,6 @@ import { CommonModule } from '@angular/common';
     ExperienceCardComponent,
   ],
   templateUrl: './home-carousel.component.html',
-  styleUrl: './home-carousel.component.scss',
 })
 export class HomeCarouselComponent {
   @Input() type: 'position' | 'experience' = 'position';

@@ -8,6 +8,7 @@ import { ExperienceCardComponent } from '../../cards/experience-card/experience-
 import { CommonModule } from '@angular/common';
 import { ExperienceService } from '../../../services/experience.service';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
+import { CodeComponent } from '@component/code/code.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -17,6 +18,7 @@ import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
     HttpClientModule,
     ExperienceCardComponent,
     HomeCarouselComponent,
+    CodeComponent,
   ],
   providers: [LanguageService],
   templateUrl: './home.component.html',
@@ -29,6 +31,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   openDocs(): void {
-    window.open('http://localhost:3000/api-docs', '_blank');
+    window.open('http://api.resume.ollietinsley.com/api-docs', '_blank');
   }
 }

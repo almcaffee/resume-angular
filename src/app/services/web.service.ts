@@ -1,14 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, combineLatest, from, map, take } from 'rxjs';
+import { environment } from '../../environments/environment';
 
+export interface RawContent {
+  filename: string;
+  content: string;
+  label: string;
+  ext: string;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class WebService {
-  protected baseUrl = 'http://api.resume.ollietinsley.com';
-  protected rawContentUrl =
-    'https://raw.githubusercontent.com/almcaffee/resume-angular/master/src/app';
+  protected baseUrl = environment.apiUrl;
+  protected rawContentUrl = environment.gitHubUrl;
   constructor(protected readonly httpClient: HttpClient) {
     this.onInit(); // Not to be confused with ngOnInit
   }
@@ -103,16 +109,27 @@ export class WebService {
 
   makeMultipleRawContentRequests(
     paths: Array<string>,
-  ): Observable<Array<{ filename: string; content: string }>> {
+  ): Observable<Array<RawContent>> {
     return combineLatest(paths.map((path) => this.makeRawContentRequest(path)));
   }
 
-  makeRawContentRequest(
-    path: string,
-  ): Observable<{ filename: string; content: string }> {
+  makeRawContentRequest(path: string): Observable<RawContent> {
     return this.makeGetRequest<string>(`${this.rawContentUrl}/${path}`, {
       responseType: 'text',
-    }).pipe(map((content) => ({ filename: path.split('/').pop()!, content })));
+    }).pipe(
+      map((content) => {
+        const filename = path.split('/').pop()!;
+        const name = filename.split('.').shift()!.split('-').join(' ');
+        const ext = filename.split('.').pop()!;
+
+        return {
+          filename,
+          content,
+          label: name,
+          ext,
+        };
+      }),
+    );
   }
 
   /**

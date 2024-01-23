@@ -6,6 +6,7 @@
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 @import "assets/scss/primeng.scss";
+@import "assets/scss/corner.scss";
 
 :root {
   --max-width: 1480px;
@@ -15,94 +16,4 @@ body {
   margin: 0;
   padding: 0;
   background-color: #eff3f8;
-}
-
-app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-app-header {
-  position: fixed;
-  z-index: 2;
-  transform: translateZ(2px);
-  .nav-container {
-    margin: 0 auto;
-  }
-}
-
-nav,
-main,
-footer {
-  margin: 0;
-  padding: 0;
-}
-
-main {
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 64px;
-  .content {
-    max-width: var(--max-width) !important;
-    margin: 2vw 2vh;
-    border: 1px solid #eee;
-  }
-  .content app-home {
-    display: block;
-    background-color: #fff;
-    overflow: hidden;
-  }
-}
-
-app-header,
-app-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-}
-
-app-footer {
-  border-top: 1px solid #ccc;
-}
-
-app-position-card,
-app-experience-card {
-  margin: 1rem;
-  &:hover {
-    margin-bottom: 0;
-    p-card {
-      aspect-ratio: 0.99;
-      margin-top: -0.75rem;
-    }
-  }
-}
-
-@media screen and (max-width: 1479px) {
-  header,
-  main > .content,
-  footer {
-    width: calc(100vw - 4vw);
-  }
-}
-
-@media screen and (min-width: 1480px) {
-  header,
-  main > .content,
-  footer {
-    width: var(--max-width);
-  }
-}
-
-.light-bg {
-  background: url("assets/images/png/light-bg.png") center center no-repeat;
-}
-
-.mid-bg {
-  background: url("assets/images/png/mid-sm-bg.png") center center no-repeat;
 }

@@ -5,10 +5,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
     opacity: 0.2;
     padding: 1.5rem;
+
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
     img {
       max-height: 50px;
       max-width: 150px;
@@ -18,10 +20,13 @@
       opacity: 0.8;
       -webkit-filter: initial; /* Safari 6.0 - 9.0 */
       filter: initial;
-      // box-shadow:
-      //   0 2px 1px -1px rgba(0, 0, 0, 0.2),
-      //   0 1px 1px 0 rgba(0, 0, 0, 0.14),
-      //   0 1px 3px 0 rgba(0, 0, 0, 0.12);
     }
   }
+}
+
+.openapi-img {
+  max-height: 2rem;
+}
+.swagger-img img {
+  max-width: 100%;
 }

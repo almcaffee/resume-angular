@@ -26,6 +26,7 @@ import { CommonModule } from '@angular/common';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { TabViewModule } from 'primeng/tabview';
 import { HighlightModule } from 'ngx-highlightjs';
+import { CodeComponent } from '@component/code/code.component';
 
 @Component({
   selector: 'app-experience',
@@ -40,6 +41,7 @@ import { HighlightModule } from 'ngx-highlightjs';
     ScrollPanelModule,
     TabViewModule,
     HighlightModule,
+    CodeComponent,
   ],
   providers: [MessageService],
   templateUrl: './experience.component.html',
@@ -47,21 +49,23 @@ import { HighlightModule } from 'ngx-highlightjs';
 })
 export class ExperienceComponent {
   private readonly destroy$ = new Subject<void>();
-  jobs$ = this.expService.getAllExperience().pipe(takeUntil(this.destroy$));
-  titles$ = this.expService
-    .getExperienceList('title')
-    .pipe(takeUntil(this.destroy$));
-  companies$ = this.expService
+  jobs$ = this.es.getAllExperience().pipe(takeUntil(this.destroy$));
+  titles$ = this.es.getExperienceList('title').pipe(takeUntil(this.destroy$));
+  companies$ = this.es
     .getExperienceList('companyName')
     .pipe(takeUntil(this.destroy$));
-  rawContent$ = this.expService.makeMultipleRawContentRequests([
+
+  codePaths = [
     'components/experience/experience.component.ts',
+    'components/experience/experience.component.html',
     'components/experience/experience-header/experience-header.component.ts',
+    'components/experience/experience-header/experience-header.component.html',
     'components/experience/experience-detail/experience-detail.component.ts',
-  ]);
+    'components/experience/experience-detail/experience-detail.component.html',
+  ];
 
   constructor(
-    private readonly expService: ExperienceService,
+    private readonly es: ExperienceService,
     private readonly route: ActivatedRoute,
     private readonly store: Store,
   ) {
@@ -107,7 +111,7 @@ export class ExperienceComponent {
   }
 
   getExperienceData(id: number) {
-    return this.expService.getExperience(id).pipe(
+    return this.es.getExperience(id).pipe(
       tap((position: Position) => {
         this.store.dispatch({
           type: '[Experience Component] Set Position',
