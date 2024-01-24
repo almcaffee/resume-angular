@@ -10,10 +10,15 @@
 
 :root {
   --max-width: 1480px;
+  --cursive: "Dancing Script", cursive;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: #eff3f8;
+}
+
+.cursive {
+  font-family: var(--cursive);
 }

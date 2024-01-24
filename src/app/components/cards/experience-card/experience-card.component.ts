@@ -8,7 +8,6 @@ import { CommonModule, DatePipe } from '@angular/common';
   standalone: true,
   imports: [CommonModule, CardModule, DatePipe],
   templateUrl: './experience-card.component.html',
-  styleUrl: './experience-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExperienceCardComponent {

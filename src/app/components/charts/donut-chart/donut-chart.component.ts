@@ -81,8 +81,9 @@ export class DonutChartComponent implements OnDestroy {
         select(selectPosition()),
         takeUntil(this.destroy$),
         tap((position) => {
+          console.log(position);
+          this.chart?.destroy?.();
           this.chartData = this.getChartData(position?.stats);
-          !position?.stats && this.chart && this.chart.destroy();
           this.addChart(this.chartOptions, this.chartData);
           this.cdr.detectChanges();
         }),

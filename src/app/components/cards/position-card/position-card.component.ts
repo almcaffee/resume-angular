@@ -10,7 +10,6 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, CardModule, DatePipe, TagModule, RouterModule],
   templateUrl: './position-card.component.html',
-  styleUrl: './position-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PositionCardComponent {
