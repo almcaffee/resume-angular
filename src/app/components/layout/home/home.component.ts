@@ -6,7 +6,6 @@ import { Experience, Position } from '../../../models';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceCardComponent } from '../../cards/experience-card/experience-card.component';
 import { CommonModule } from '@angular/common';
-import { ExperienceService } from '../../../services/experience.service';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { CodeComponent } from '@component/code/code.component';
 @Component({
@@ -31,6 +30,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   openDocs(): void {
-    window.open('http://api.resume.ollietinsley.com/api-docs', '_blank');
+    window.open('https://resume.ollietinsley.com/api-docs', '_blank');
   }
 }
