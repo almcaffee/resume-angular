@@ -70,8 +70,6 @@ export class HomeCarouselComponent {
         ),
       )
       .subscribe(([positions, languages]) => {
-        console.log(positions);
-        console.log(languages);
         this.positions = positions;
         this.languages = languages;
       });

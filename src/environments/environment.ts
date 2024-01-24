@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://resume.ollietinsley.com/api',
+  apiDomain: 'https://resume.ollietinsley.com',
   gitHubUrl:
     'https://raw.githubusercontent.com/almcaffee/resume-angular/master/src/app',
 };

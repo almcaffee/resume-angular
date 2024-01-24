@@ -15,7 +15,5 @@ export class ExperienceCardComponent {
   @Input() type: ExpType | undefined;
   @Input() showDetail: boolean | undefined;
 
-  constructor() {
-    console.log(this.data);
-  }
+  constructor() {}
 }

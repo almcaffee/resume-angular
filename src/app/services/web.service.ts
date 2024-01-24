@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Renderer2 } from '@angular/core';
 import { Observable, combineLatest, from, map, take } from 'rxjs';
 import { environment } from '../../environments/environment';
+
+const _win = window ?? {};
 
 export interface RawContent {
   filename: string;
@@ -13,7 +15,7 @@ export interface RawContent {
   providedIn: 'root',
 })
 export class WebService {
-  protected baseUrl = environment.apiUrl;
+  protected baseUrl = `${environment.apiDomain}/api`;
   protected rawContentUrl = environment.gitHubUrl;
   constructor(protected readonly httpClient: HttpClient) {
     this.onInit(); // Not to be confused with ngOnInit
