@@ -1,5 +1,11 @@
-<div *ngIf="position$ | async as position" class="surface-section mt-5">
-  <div class="font-medium text-2xl text-900 mb-3">What my resume says</div>
+<div *ngIf="position$ | async as position" class="surface-section mt-3">
+  <div *ngIf="position.headline">
+    <div class="font-medium text-2xl text-900 mb-3">About</div>
+    <div class="text-500">
+      {{ position.headline }}
+    </div>
+  </div>
+  <div class="font-medium text-2xl text-900 mt-4 mb-3">What my resume says</div>
   <ul class="list-none p-0 m-0">
     <li
       *ngFor="let bullet of position.bullets"

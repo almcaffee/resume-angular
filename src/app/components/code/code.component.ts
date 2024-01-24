@@ -22,7 +22,6 @@ import { TagModule } from 'primeng/tag';
     TagModule,
   ],
   templateUrl: './code.component.html',
-  styleUrl: './code.component.scss',
 })
 export class CodeComponent {
   @Input() set contentPaths(paths: Array<string>) {

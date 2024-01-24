@@ -5,8 +5,5 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './skill-card.component.html',
-  styleUrl: './skill-card.component.scss'
 })
-export class SkillCardComponent {
-
-}
+export class SkillCardComponent {}

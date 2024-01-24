@@ -17,7 +17,6 @@ import {
 import { Position } from '../../models';
 import { ExperienceHeaderComponent } from './experience-header/experience-header.component';
 import { Store, select } from '@ngrx/store';
-import { selectPositions } from '../../store/store.selectors';
 import { MessageService } from 'primeng/api';
 import { HttpErrorResponse } from '@angular/common/http';
 import { getToastMessage } from '../../utils';
@@ -45,7 +44,6 @@ import { CodeComponent } from '@component/code/code.component';
   ],
   providers: [MessageService],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
   private readonly destroy$ = new Subject<void>();

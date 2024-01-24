@@ -17,6 +17,8 @@ import {
   selectTitles,
 } from '../../../store/store.selectors';
 import { DonutChartComponent } from '../../charts/donut-chart/donut-chart.component';
+import { ChipModule } from 'primeng/chip';
+
 @Component({
   selector: 'app-experience-header',
   standalone: true,
@@ -27,6 +29,7 @@ import { DonutChartComponent } from '../../charts/donut-chart/donut-chart.compon
     DropdownModule,
     TagModule,
     DonutChartComponent,
+    ChipModule,
   ],
   templateUrl: './experience-header.component.html',
   styleUrl: './experience-header.component.scss',
