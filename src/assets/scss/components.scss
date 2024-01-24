@@ -64,28 +64,30 @@ app-experience-card {
     color: #d8b31c;
     font-size: 1.2rem;
   }
-  &:hover {
-    margin: 0.25rem;
-    .p-card {
-      background-image: url("../images/png/mid-bg-alt-lt.png");
+  &.hoverable {
+    &:hover {
+      margin: 0.25rem;
+      .p-card {
+        background-image: url("../images/png/mid-bg-alt-lt.png");
 
-      color: var(--blue-50);
-      margin: 0;
-      .p-card-body {
-        padding-bottom: 2.5rem;
-        .p-card-title {
-          color: #d7ba7d;
-        }
-        .p-card-subtitle {
-          color: var(--primary-color);
-        }
-        .p-tag {
-          background-color: #000;
+        color: var(--blue-50);
+        margin: 0;
+        .p-card-body {
+          padding-bottom: 2.5rem;
+          .p-card-title {
+            color: #d7ba7d;
+          }
+          .p-card-subtitle {
+            color: var(--primary-color);
+          }
+          .p-tag {
+            background-color: #000;
+          }
         }
       }
-    }
-    .hover {
-      display: block;
+      .hover {
+        display: block;
+      }
     }
   }
 }

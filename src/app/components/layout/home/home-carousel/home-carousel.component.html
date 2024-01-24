@@ -12,7 +12,10 @@
       [responsiveOptions]="responsiveOptions"
     >
       <ng-template let-position pTemplate="item">
-        <app-position-card [data]="position"></app-position-card>
+        <app-position-card
+          [data]="position"
+          class="hoverable"
+        ></app-position-card>
       </ng-template>
     </p-carousel>
   </div>

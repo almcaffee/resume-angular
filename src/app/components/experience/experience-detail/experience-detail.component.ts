@@ -5,10 +5,17 @@ import { Store, select } from '@ngrx/store';
 import { selectPosition } from '../../../store/store.selectors';
 import { CommonModule } from '@angular/common';
 import { DonutChartComponent } from '../../charts/donut-chart/donut-chart.component';
+import { HomeCarouselComponent } from '@component/layout/home/home-carousel/home-carousel.component';
 @Component({
   selector: 'app-exp-detail',
   standalone: true,
-  imports: [CommonModule, ButtonModule, ChipModule, DonutChartComponent],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    ChipModule,
+    DonutChartComponent,
+    HomeCarouselComponent,
+  ],
   templateUrl: './experience-detail.component.html',
   styleUrl: './experience-detail.component.scss',
 })
