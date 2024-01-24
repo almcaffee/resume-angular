@@ -79,7 +79,6 @@ export class ExperienceHeaderComponent {
     return combineLatest([this.jobs$, this.titles$, this.companies$]).pipe(
       tap(([jobs, titles, companies]) => {
         this.jobs = jobs;
-        this.titles = titles;
         this.companies = companies;
       }),
     );

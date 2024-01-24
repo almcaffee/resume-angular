@@ -46,7 +46,7 @@ import { CodeComponent } from '@component/code/code.component';
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
-  private readonly destroy$ = new Subject<void>();
+  private destroy$ = new Subject<void>();
   jobs$ = this.es.getAllExperience().pipe(takeUntil(this.destroy$));
   titles$ = this.es.getExperienceList('title').pipe(takeUntil(this.destroy$));
   companies$ = this.es

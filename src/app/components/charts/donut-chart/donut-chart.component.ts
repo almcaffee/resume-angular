@@ -18,9 +18,9 @@ import { Store, select } from '@ngrx/store';
 import { selectPosition } from '../../../store/store.selectors';
 import { Subject, filter, take, takeUntil, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { PositionUse } from '../../../models';
 import { chartColors } from '../chart-colors';
 import { ChartModule } from 'primeng/chart';
+import { PositionUse } from '@model/index';
 
 interface CustomChartData {
   key: string;

@@ -3,8 +3,8 @@ import { Message, MessageService } from 'primeng/api';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Store, select } from '@ngrx/store';
-import { selectToastMessage } from '../../../store/store.selectors';
 import { ToastModule } from 'primeng/toast';
+import { selectToastMessage } from '../../../store/store.selectors';
 
 @Component({
   selector: 'app-message',

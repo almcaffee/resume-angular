@@ -4,8 +4,8 @@ import { ChipModule } from 'primeng/chip';
 import { Store, select } from '@ngrx/store';
 import { selectPosition } from '../../../store/store.selectors';
 import { CommonModule } from '@angular/common';
-import { DonutChartComponent } from '../../charts/donut-chart/donut-chart.component';
 import { HomeCarouselComponent } from '@component/layout/home/home-carousel/home-carousel.component';
+import { DonutChartComponent } from '@component/charts/donut-chart/donut-chart.component';
 @Component({
   selector: 'app-exp-detail',
   standalone: true,
