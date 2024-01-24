@@ -19,6 +19,7 @@ export class WebService {
   protected rawContentUrl = environment.gitHubUrl;
   constructor(protected readonly httpClient: HttpClient) {
     this.onInit(); // Not to be confused with ngOnInit
+    console.log(location);
   }
 
   /** Method to be overwritten by extended classes to be called in constructor */
